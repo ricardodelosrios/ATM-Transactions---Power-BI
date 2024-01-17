@@ -231,6 +231,11 @@ Welcome to the data analytics project for a Bank in Nigeria. This project aims t
     ## 3. Demographics Page
     - The "Demographics" page concentrates on demographic analysis related to transactions.
     - It includes charts and reports displaying the demographic distribution of users and its impact on ATM transactions.
+ 
+ # Conclusion
+  This Power BI project offers a comprehensive tool for analyzing ATM transactions data, providing valuable insights for informed decision-making within the Nigerian bank. For more details,     refer to the project files and explore the visualizations to gain a deeper understanding of transaction trends.
+
+  **Note**: The data for this analysis was sourced from [Wisabi Analytics](https://www.linkedin.com/company/wisabi-analytics/)
   
 
 
