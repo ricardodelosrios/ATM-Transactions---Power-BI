@@ -1,5 +1,11 @@
 # ATM-Transactions-Power-BI
 
+
+
+https://github.com/ricardodelosrios/ATM-Transactions---Power-BI/assets/133066908/450b6148-2967-4b85-aab3-eeeae86c1f8e
+
+**Link acceso:** [ATM Transaccions Power BI](https://app.powerbi.com/view?r=eyJrIjoiYjJhZjRjMDgtOWU2OC00YTEwLWE1ZDYtMjEwOThhNTY5MDcwIiwidCI6IjViMTU1MDU3LWMxMGEtNDM3Mi04NWU4LTEzZTA3ZGJlMTc3NSJ9).
+
 # Introduction
 
 Welcome to the data analytics project for a Bank in Nigeria. This project aims to analyze ATM transactions data to enhance customer experience and optimize operations. 
