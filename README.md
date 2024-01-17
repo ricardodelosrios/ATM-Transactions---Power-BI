@@ -119,6 +119,90 @@ Welcome to the data analytics project for a Bank in Nigeria. This project aims t
    3. Click on **"New,"** choose the primary table as **"Transactions,"** and establish a relationship with the **"Hour"** table by selecting the **"Hour"** column in one table and the **"hour_key"** column in the other.
    4. Click on **"New,"** choose the primary table as **"Transactions,"** and establish a relationship with the **"Location"** table by selecting the **"LocationID"** column in both tables.
    5. Click on **"New,"** choose the primary table as **"Transactions,"** and establish a relationship with the **"Transaction Type"** table by selecting the **"TransactionTypeID"** column in both tables.
+ 
+  ![alt text](https://github.com/ricardodelosrios/ATM-Transactions---Power-BI/blob/main/Images/Database%20relationships.png)
+
+  ## Create Calculated Table and Measures
+
+  1. Set Up "Report View"
+   Switch the view to "Report view."
+
+  2. Create a New Table
+   Navigate to the "Modeling" tab, select "New Table," and enter the following formula:
+   ```
+   [Measures Table] = {Blank()}
+    ```
+   3. Create Average Transaction Amount Measure
+    To address the question from the project brief, "What is the average transaction amount by location and transaction type?," follow these steps:
+
+     * Select the "Measures Table."
+     * Click on the three dots (...) and choose "New Measure."
+     * Enter the following formula:
+    ```
+    average_amount = AVERAGE(Transactions[TransactionAmount])
+    ```
+   4. Create Transaction Amount Measure Over Time
+   To address the question regarding transaction volume and amount trends over time, and identifying seasonal patterns, follow these steps:
+
+    * Select the "Measures Table."
+    * Click on the three dots (...) and choose "New Measure."
+    * Enter the following formula:
+    ```
+    transaction_amount = SUM(Transactions[TransactionAmount])
+    ```
+    5. Create Measures for Average Transaction Amount and Frequency
+    To answer the question, "What is the average transaction amount and transaction frequency per customer by occupation and age group?," create two measures:
+
+    ```
+    number_of_customers = DISTINCTCOUNT(Transactions[CardholderID])
+    ```
+    ```
+    transaction_frequency = DIVIDE([transactions_count], [number_of_customers])
+    ```
+    6. Utilization Rate Measure
+    For the question "Which ATM locations have the highest and lowest utilization rates, and what factors contribute to this utilization rate?," create the following measure:
+    ```
+    
+    Utilization Rate = 
+
+    VAR transaction_time = SUM(Transactions[Duration])
+    VAR available_time = 24 * 365 * 60 * SUM(Location[No of ATMs])
+    VAR utilization_rate = DIVIDE(transaction_time, available_time)
+
+    RETURN
+    utilization_rate
+    ```
+    Explanation:
+
+    transaction_time: Sum of "duration" in the "Transactions" table.
+    available_time: Multiplication of hours (24), days in a year (365), minutes per hour (60), and the sum of ATMs.
+    utilization_rate: Division of the above two variables.
+
+    7. Average Transaction Time Measure
+    To address the question "What is the average transaction time by location, transaction type, and time of day, and how does it vary by customer type and occupation?," create the following     measure:
+
+    ```
+    average_duration = AVERAGE(Transactions[Duration])
+    ```
+    8. Percentage of Transactions Measure
+    Create a new measure to calculate the percentage of transactions:
+    ```
+    % Transactions = 
+    DIVIDE([transactions_count],
+        CALCULATE([transactions_count], ALLSELECTED(Transactions))
+    )
+    ```
+    Explanation:
+
+    * [transactions_count]: Represents the measure or column containing the count of transactions under consideration (numerator).
+    * CALCULATE([transactions_count], ALLSELECTED(Transactions)): Calculates the total number of transactions but with a modified filter context. ALLSELECTED(Transactions) removes all filters applied in the Transactions table while keeping filters applied in other tables.
+    In summary, this formula calculates the percentage of transactions by dividing the count of transactions in consideration by the total count of transactions, considering a specific filter context for the Transactions table. This is useful when calculating percentages in relation to the total while selectively handling the filter context.
+    
+    9. Count of Transactions Measure
+    Create a new measure to count the number of transactions:
+    ```
+    transactions_count = COUNTROWS(Transactions)
+    ```
 
 
 
