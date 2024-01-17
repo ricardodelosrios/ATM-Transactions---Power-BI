@@ -1,5 +1,10 @@
 # ATM-Transactions-Power-BI
 
+<div style="display: inline_block"><br/>
+  <img align="center" alt="Power BI" src="https://img.shields.io/badge/Power%20BI-61DBFB?style=for-the-badge&logo=Power%20BI&labelColor=black" />
+<div style="display: inline_block"><br/>
+ <img align="center" alt="Power Query" src="https://img.shields.io/badge/Power%20Query-Yellow"/>
+ 
 
 
 https://github.com/ricardodelosrios/ATM-Transactions---Power-BI/assets/133066908/450b6148-2967-4b85-aab3-eeeae86c1f8e
