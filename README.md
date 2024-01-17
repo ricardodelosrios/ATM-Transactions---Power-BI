@@ -204,6 +204,24 @@ Welcome to the data analytics project for a Bank in Nigeria. This project aims t
     transactions_count = COUNTROWS(Transactions)
     ```
 
+  # Visualization
+
+    The project is organized into three main pages:
+    
+    ## 1. Home Page
+    - The home page provides an overview of the project.
+    - It includes the project name and navigation buttons to access other dashboard pages.
+    - Offers an intuitive experience for users who want to explore different sections of the analysis.
+    
+    ## 2. Overview Page
+    - The "Overview" page focuses on the analysis of ATM transactions.
+    - It provides detailed visualizations, charts, and reports on transactions, offering a comprehensive understanding of patterns and trends.
+    
+    ## 3. Demographics Page
+    - The "Demographics" page concentrates on demographic analysis related to transactions.
+    - It includes charts and reports displaying the demographic distribution of users and its impact on ATM transactions.
+  
+
 
 
 
